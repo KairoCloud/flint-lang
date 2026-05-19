@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Flint Logo](docs/logo.svg)
+![Flint Logo](logo.png)
 
 **AI-first, production-ready, beginner-friendly**
 
