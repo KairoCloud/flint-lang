@@ -1,0 +1,102 @@
+{
+  "scopeName": "source.flint",
+  "name": "Flint",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "#",
+          "end": "$",
+          "name": "comment.line.flint"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(let|var|const|fn|return|if|else|elif|for|while|match|in|is|not|and|or|true|false|null)\\b",
+          "name": "keyword.flint"
+        },
+        {
+          "match": "\\b(type|interface|trait|impl|enum|struct|import|export|from|as|async|await|spawn|channel|send|recv|pub|priv|static|mut|self|super|use|mod|test|assert|ai|prompt|agent|extend|where)\\b",
+          "name": "keyword.flint"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "name": "string.quoted.triple.flint"
+        },
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.flint"
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.flint"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b\\d+\\.\\d+\\b",
+          "name": "constant.numeric.float.flint"
+        },
+        {
+          "match": "\\b\\d+\\b",
+          "name": "constant.numeric.integer.flint"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "(->|=>|\\+=|\\-=|\\*=|\\/=|\\*\\*|==|!=|&&|\\|\\||\\.\\.|\\.\\.\\.)",
+          "name": "keyword.operator.flint"
+        },
+        {
+          "match": "[+\\-*/%=<>!&|^~?:]",
+          "name": "keyword.operator.flint"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b",
+          "name": "entity.name.type.flint"
+        },
+        {
+          "match": "\\b[a-z_][a-zA-Z0-9_]*\\b",
+          "name": "variable.other.flint"
+        }
+      ]
+    }
+  }
+}

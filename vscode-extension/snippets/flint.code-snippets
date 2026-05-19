@@ -1,0 +1,122 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:args}) -> ${3:ReturnType}:",
+      "  ${4:body}"
+    ],
+    "description": "Function declaration"
+  },
+  "Async Function": {
+    "prefix": "async fn",
+    "body": [
+      "async fn ${1:name}(${2:args}) -> ${3:ReturnType}:",
+      "  ${4:body}"
+    ],
+    "description": "Async function declaration"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name}:",
+      "  ${2:field}: ${3:Type}"
+    ],
+    "description": "Struct declaration"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:Name}:",
+      "  ${2:Variant1}",
+      "  ${3:Variant2}(${4:fields})"
+    ],
+    "description": "Enum declaration"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:Name}:",
+      "  fn ${2:method}(${3:args}) -> ${4:ReturnType}"
+    ],
+    "description": "Interface declaration"
+  },
+  "Trait": {
+    "prefix": "trait",
+    "body": [
+      "trait ${1:Name}:",
+      "  fn ${2:method}(${3:args}) -> ${4:ReturnType}"
+    ],
+    "description": "Trait declaration"
+  },
+  "Match": {
+    "prefix": "match",
+    "body": [
+      "match ${1:expr}:",
+      "  ${2:pattern1} => ${3:result1},",
+      "  _ => ${4:default}"
+    ],
+    "description": "Match expression"
+  },
+  "If Expression": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}:",
+      "  ${2:then_branch}",
+      "elif ${3:elif_condition}:",
+      "  ${4:elif_branch}",
+      "else:",
+      "  ${5:else_branch}"
+    ],
+    "description": "If-elif-else expression"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:item} in ${2:iterable}:",
+      "  ${3:body}"
+    ],
+    "description": "For loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}:",
+      "  ${2:body}"
+    ],
+    "description": "While loop"
+  },
+  "Test": {
+    "prefix": "test",
+    "body": [
+      "test \"${1:test_name}\":",
+      "  ${2:assertion}"
+    ],
+    "description": "Test block"
+  },
+  "Import": {
+    "prefix": "import",
+    "body": "import ${1:module} from \"${2:flint:${1}}\"",
+    "description": "Import statement"
+  },
+  "Lambda": {
+    "prefix": "=>",
+    "body": "(${1:args}) => ${2:body}",
+    "description": "Lambda expression"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": [
+      "fn ${1:name}(self${2:, params}):",
+      "  ${3:body}"
+    ],
+    "description": "Method definition"
+  },
+  "Async Block": {
+    "prefix": "async",
+    "body": [
+      "async fn ${1:name}(${2:args}):",
+      "  ${3:body}"
+    ],
+    "description": "Async function block"
+  }
+}

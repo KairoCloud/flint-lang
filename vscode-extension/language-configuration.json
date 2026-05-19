@@ -1,0 +1,63 @@
+{
+  "comments": {
+    "lineComment": "#"
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "'", "close": "'" }
+  ],
+  "surroundingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "'", "close": "'" }
+  ],
+  "indentationRules": {
+    "increaseIndentPattern": ".*(:|=>)\\s*$",
+    "decreaseIndentPattern": "^\\s*(elif|else|end)\\b.*$"
+  },
+  "wordPattern": "(-?\\d*\\.\\d+)|(\\w+)|(\\$[\\w_]+)|([:!<>=+*/%-]+)",
+  "tokenColors": [
+    {
+      "scope": "keyword.flint",
+      "settings": {
+        "foreground": "569CD6",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "string.flint",
+      "settings": {
+        "foreground": "CE9178"
+      }
+    },
+    {
+      "scope": "comment.flint",
+      "settings": {
+        "foreground": "6A9955",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": "constant.numeric.flint",
+      "settings": {
+        "foreground": "B5CEA8"
+      }
+    },
+    {
+      "scope": "entity.name.type.flint",
+      "settings": {
+        "foreground": "4EC9B0"
+      }
+    }
+  ]
+}

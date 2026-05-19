@@ -1,0 +1,40 @@
+# Hello World - Flint Programming Language
+
+let message = "Hello, World!"
+
+print(message)
+
+fn greet(name: Str) -> Str:
+  return "Hello, ${name}!"
+
+print(greet("Flint"))
+
+# Array and iteration
+let numbers = [1, 2, 3, 4, 5]
+for n in numbers:
+  print(n * 2)
+
+# Pattern matching
+fn describe(n: Int) -> Str:
+  match n:
+    0 => "zero"
+    1 => "one"
+    _ => "many"
+
+print(describe(3))
+
+# Struct
+struct Point:
+  x: Float
+  y: Float
+
+  fn distance(self, other: Point) -> Float:
+    let dx = self.x - other.x
+    let dy = self.y - other.y
+    return (dx * dx + dy * dy) ** 0.5
+
+let p1 = Point(x: 0.0, y: 0.0)
+let p2 = Point(x: 3.0, y: 4.0)
+print(p1.distance(p2))
+
+print("Done!")

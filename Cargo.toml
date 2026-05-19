@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [
+    "compiler",
+    "vm",
+    "runtime",
+    "tools/repl",
+    "tools/fmt",
+    "tools/lint",
+    "tools/lsp",
+    "tools/pkg",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Flint Team"]
+license = "MIT"
+
+[workspace.metadata.flint]
+language = "Flint"

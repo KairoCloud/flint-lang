@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF4500"/>
+      <stop offset="50%" style="stop-color:#FF8C00"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="256" height="256" rx="32" fill="#1a1a2e"/>
+  
+  <!-- Flame shape -->
+  <path d="M128 32 
+           C128 32 180 60 180 100 
+           C180 120 160 140 160 160 
+           C160 180 180 200 180 220 
+           C180 240 150 248 128 248 
+           C106 248 76 240 76 220 
+           C76 200 96 180 96 160 
+           C96 140 76 120 76 100 
+           C76 60 128 32 128 32Z" 
+        fill="url(#flameGrad)"/>
+  
+  <!-- Inner flame -->
+  <path d="M128 60
+           C128 60 160 80 160 110
+           C160 125 145 140 145 155
+           C145 170 160 185 160 205
+           C160 220 140 230 128 230
+           C116 230 96 220 96 205
+           C96 185 111 170 111 155
+           C111 140 96 125 96 110
+           C96 80 128 60 128 60Z"
+        fill="#FFD700"/>
+  
+  <!-- Text -->
+  <text x="128" y="195" 
+        font-family="Arial, sans-serif" 
+        font-size="28" 
+        font-weight="bold" 
+        fill="#1a1a2e" 
+        text-anchor="middle">FL</text>
+  
+  <!-- F letter -->
+  <path d="M140 175 L165 175 M152 175 L152 195 M140 185 L165 185" 
+        stroke="#1a1a2e" 
+        stroke-width="4" 
+        stroke-linecap="round"
+        fill="none"/>
+</svg>

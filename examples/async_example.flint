@@ -1,0 +1,60 @@
+# Async and Concurrency Example
+
+import http from "flint:http"
+
+# Async function
+async fn fetchData(url: Str) -> Str:
+  let response = http.get(url)
+  return response.body
+
+# Spawn concurrent tasks
+async fn fetchAll(urls: [Str]) -> [Str]:
+  let tasks = urls.map(url => spawn fetchData(url))
+  return await Promise.all(tasks)
+
+# Channel-based communication
+fn producer(ch: Channel<Int>):
+  for i in range(10):
+    send(ch, i)
+  ch.close()
+
+fn consumer(ch: Channel<Int>):
+  loop:
+    match recv(ch):
+      Some(n) => print("Received: ${n}")
+      None => break
+
+# Actor example
+agent Counter:
+  count: Int = 0
+  
+  fn increment():
+    count += 1
+  
+  fn getCount() -> Int:
+    return count
+
+# Main
+async fn main():
+  # Async HTTP request
+  let data = await fetchData("https://api.example.com/data")
+  print(data)
+  
+  # Concurrent fetch
+  let urls = ["https://a.com", "https://b.com", "https://c.com"]
+  let results = await fetchAll(urls)
+  print("Fetched ${results.len()} responses")
+  
+  # Channel example
+  let ch = channel<Int>()
+  spawn producer(ch)
+  consumer(ch)
+  
+  # Actor example
+  let counter = Counter()
+  counter.increment()
+  counter.increment()
+  print("Count: ${counter.getCount()}")
+
+# Run main
+main()

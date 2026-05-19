@@ -1,0 +1,94 @@
+{
+  "name": "flint-language",
+  "displayName": "Flint Language Support",
+  "description": "Syntax highlighting, intellisense, and tooling for the Flint programming language",
+  "version": "0.1.0",
+  "publisher": "flint-lang",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Linters"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "flint",
+        "aliases": ["Flint", "flint"],
+        "extensions": [".flint"],
+        "icon": "icons/flint.png",
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flint",
+        "scopeName": "source.flint",
+        "path": "./syntaxes/flint.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "flint.formatDocument",
+        "title": "Format Document"
+      },
+      {
+        "command": "flint.runFile",
+        "title": "Run File"
+      },
+      {
+        "command": "flint.openRepl",
+        "title": "Open REPL"
+      },
+      {
+        "command": "flint.runTests",
+        "title": "Run Tests"
+      }
+    ],
+    "configuration": {
+      "title": "Flint",
+      "properties": {
+        "flint.path": {
+          "type": "string",
+          "description": "Path to Flint executable"
+        },
+        "flint.serverPath": {
+          "type": "string",
+          "description": "Path to Flint LSP server"
+        },
+        "flint.trace.server": {
+          "type": "string",
+          "enum": ["off", "messages", "verbose"],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "flint.formatDocument",
+        "key": "Shift+Alt+F",
+        "when": "editorTextFocus && editorLangId == flint"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "@vscode/test-electron": "^2.2.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0",
+    "vscode-languageparser": "^8.1.0"
+  }
+}
